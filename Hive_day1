@@ -1,0 +1,12 @@
+Goto hive shell
+  create database newdb;
+  use newdb;
+  create table txntab(txnno int, txndata string, category string) row format delimited fields terminated by ',';
+  load data local inpath '/home/cloudera/data/txnsd.txt' into table txntab;
+  select * from txntab;
+Create another table
+  create table txntab_target(txnno int, txndate string, category string) row format delimited fields terminated by ',';
+  insert into txntab_target select * from txntab where category='Gymnastics';
+  select * from txntab_target;
+  
+  
