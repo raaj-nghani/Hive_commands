@@ -9,4 +9,6 @@ Create another table
   insert into txntab_target select * from txntab where category='Gymnastics';
   select * from txntab_target;
   
+create table
+  
   
